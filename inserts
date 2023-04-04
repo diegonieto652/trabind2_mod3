@@ -1,5 +1,5 @@
 
- insert into empresa_parceira VALUES(1, 'radu engenharia', 'rua filomena nunes','22.333.333/4444.55')
+ insert into empresa_parceira VALUES(1, 'tundercat', 'rua beco dos gatos','22.333.333/4444.55')
  insert into empresa_parceira VALUES(2,'nike',' Rua da alfandega','22.333.333/4444.99')
  insert into empresa_parceira VALUES(3,'adidas', 'Rua lavradores','22.333.333/4444.24')
  insert into empresa_parceira VALUES(4,'la casa de pastel', 'dos afonsos','22.333.333/4444.00')
