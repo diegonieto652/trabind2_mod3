@@ -1,0 +1,28 @@
+SELECT TOP 1 empresa_parceira.nome, COUNT(*) AS quantidade_tecnologias
+FROM empresa_parceira
+JOIN relatorios ON empresa_parceira.id = relatorios.empresa_parc_id
+JOIN tecnologia ON relatorios.tecnologia_id = tecnologia.id
+WHERE relatorios.data_compilacao = '2022-02-01'
+GROUP BY empresa_parceira.nome
+ORDER BY quantidade_tecnologias DESC;
+
+SELECT TOP 1 empresa_parceira.nome, COUNT(*) AS quantidade_tecnologias
+FROM empresa_parceira
+JOIN relatorios ON empresa_parceira.id = relatorios.empresa_parc_id
+JOIN tecnologia ON relatorios.tecnologia_id = tecnologia.id
+WHERE relatorios.data_compilacao < '2022-01-01'
+GROUP BY empresa_parceira.nome
+ORDER BY quantidade_tecnologias ASC;
+
+SELECT COUNT(DISTINCT empresa_parceira.id) AS quantidade_empresas
+FROM empresa_parceira
+JOIN empresa_tecnologia ON empresa_parceira.id = empresa_tecnologia.empresa_parc_id
+JOIN tecnologia ON empresa_tecnologia.tecnologias_id = tecnologia.id
+WHERE tecnologia.area like '%dados%';
+
+
+SELECT COUNT(DISTINCT empresa_parceira.id) AS sem_area_dados
+FROM empresa_parceira
+JOIN empresa_tecnologia ON empresa_parceira.id = empresa_tecnologia.empresa_parc_id
+JOIN tecnologia ON empresa_tecnologia.tecnologias_id = tecnologia.id
+WHERE tecnologia.area NOT LIKE '%Dados%';
